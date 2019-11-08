@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -25,7 +26,7 @@ import javax.swing.JToolBar;
 import javax.swing.table.DefaultTableModel;
 import tools.JanelaPesquisar;
 import tools.ManipulaArquivo;
-
+import tools.ManipulaImagem;
 /**
  *
  * @author radames
@@ -64,7 +65,7 @@ public class GUI extends JFrame {
 
     private Controle controle = new Controle();
     private Trabalhador trabalhador = new Trabalhador();
-
+    private ManipulaImagem manipulaImagem = new ManipulaImagem();
     String[] colunas = new String[]{"Id", "Nome", "Endereço", "Aposentado"};
     String[][] dados = new String[0][4];
 
@@ -87,6 +88,33 @@ public class GUI extends JFrame {
         setLocationRelativeTo(null);//centro do monitor
 
         cp = getContentPane();
+        
+        ImageIcon icon=manipulaImagem.criaIcon("/icones/retrieve.png", 30, 30);
+        btBuscar=manipulaImagem.insereBotao(icon, "Buscar");
+        
+        icon=manipulaImagem.criaIcon("/icones/list.png", 30, 30);
+        btListar=manipulaImagem.insereBotao(icon, "Listar");
+        
+        icon=manipulaImagem.criaIcon("/icones/retrieve_1.png", 30, 30);
+        btLocalizar=manipulaImagem.insereBotao(icon, "Localizar");
+        
+        icon=manipulaImagem.criaIcon("/icones/delete_1.png", 30, 30);
+        btExcluir=manipulaImagem.insereBotao(icon, "Excluir");
+        
+        icon=manipulaImagem.criaIcon("/icones/update.png", 35, 30);
+        btAlterar=manipulaImagem.insereBotao(icon, "Alterar");
+        
+        icon=manipulaImagem.criaIcon("/icones/save-as.png", 30, 30);
+        btSalvar=manipulaImagem.insereBotao(icon, "Salvar");
+        
+        icon=manipulaImagem.criaIcon("/icones/newCancelar.png", 30, 30);
+        btCancelar=manipulaImagem.insereBotao(icon, "Cancelar");
+        
+        icon=manipulaImagem.criaIcon("/icones/save.png", 30, 30);
+        btGravar=manipulaImagem.insereBotao(icon, "Gravar");
+        
+        icon=manipulaImagem.criaIcon("/icones/create_1.png", 30, 30);
+        btAdicionar=manipulaImagem.insereBotao(icon, "Adicionar");
 
         cp.setLayout(new BorderLayout());
         cp.add(painelNorte, BorderLayout.NORTH);
