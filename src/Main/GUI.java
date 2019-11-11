@@ -370,6 +370,9 @@ public class GUI extends JFrame {
                                 "Confirma a exclusão do registro <Nome = " + trabalhador.getNome() + ">?", "Confirm",
                                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)) {
                     controle.excluir(trabalhador);
+                    texto.setText("Excluiu o registro de " + trabalhador.getCpf() + " - " + trabalhador.getNome() + "\n\n\n\n\n");//limpa o campo texto
+                }else{
+                    texto.setText("Não excluiu o registro de " + trabalhador.getCpf() + " - " + trabalhador.getNome() + "\n\n\n\n\n");//limpa o campo texto
                 }
                 btBuscar.setVisible(true);
                 btListar.setVisible(true);
@@ -382,7 +385,7 @@ public class GUI extends JFrame {
                 tfCpf.selectAll();
                 btExcluir.setVisible(false);
                 btAlterar.setVisible(false);
-                texto.setText("Excluiu o registro de " + trabalhador.getCpf() + " - " + trabalhador.getNome() + "\n\n\n\n\n");//limpa o campo texto
+                
             }
         });
 
